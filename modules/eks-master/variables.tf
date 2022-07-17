@@ -9,7 +9,7 @@ variable "cluster_version" {
   default     = "1.22"
 }
 
-variable "cluster_vpc" {
+variable "cluster_vpc_id" {
   type        = string
   description = "Cluster VPC id"
 }
