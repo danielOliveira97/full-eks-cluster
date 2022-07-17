@@ -15,6 +15,6 @@ variable "cluster_vpc" {
 }
 
 variable "private_subnets" {
-  type        = list()
+  type        = list(string)
   description = "Cluster VPC private subnets"
 }
