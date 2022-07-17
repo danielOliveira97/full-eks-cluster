@@ -33,3 +33,12 @@ module "eks_master" {
   cluster_vpc_id  = module.vpc.vpc_id
   private_subnets = local.vpc_private_subnets
 }
+
+module "eks_nodes" {
+  source                = "./modules/eks-nodes"
+  cluster_name          = var.cluster_name
+  nodes_instances_sizes = local.nodes_instances_sizes
+  private_subnets       = local.vpc_private_subnets
+  auto_scaling_options  = local.auto_scaling_options
+  auto_scale_cpu        = local.auto_scale_cpu
+}
